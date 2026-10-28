@@ -151,6 +151,10 @@
   }
   async function exportFile(snapshot, format) {
     if (!['pdf', 'xlsx', 'json', 'inquiry'].includes(format)) throw new Error('不支持该导出格式。');
+    if (format === 'pdf' || format === 'xlsx') {
+      if (!window.FreightBrowserExports?.exportFile) throw new Error('文件导出组件尚未加载，请刷新页面后重试。');
+      return window.FreightBrowserExports.exportFile(snapshot, format);
+    }
     return fetch('/api/export?format=' + encodeURIComponent(format), {method: 'POST', cache: 'no-store',
       headers: {'Content-Type': 'application/json'}, body: JSON.stringify({snapshot})});
   }

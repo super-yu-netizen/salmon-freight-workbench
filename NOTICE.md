@@ -30,3 +30,5 @@ Python、Cloudflare Workers／Wrangler、ReportLab、XlsxWriter 及实际安装�
 字体按 [SIL Open Font License 1.1](assets/fonts/OFL.txt) 再分发。完整来源、转换方式与文件哈希见 [SOURCE.md](assets/fonts/SOURCE.md)。发布包没有包含本机系统字体或专有开发运行时。
 
 维护者不会因本项目公开而变更第三方软件、字体、商标或外链内容的权利归属。
+
+浏览器文件导出使用 jsPDF、jsPDF-AutoTable 和 ExcelJS；构建产物保留相关第三方许可声明，完整依赖版本见 package-lock.json。

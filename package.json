@@ -4,11 +4,18 @@
   "private": true,
   "description": "三文鱼AI · 制造外贸船务运费快速测算演示工作台",
   "scripts": {
-    "build": "python3 tools/build_public_assets.py",
+    "build": "npm run build:exports && python3 tools/build_public_assets.py",
+    "build:exports": "esbuild client/browser-exports.js --bundle --minify --format=iife --global-name=FreightBrowserExports --platform=browser --target=es2020 --legal-comments=eof --outfile=static/browser-exports.js",
     "dev:cloudflare": "uv run pywrangler dev --port 8877",
     "deploy": "npm run build && uv run pywrangler deploy"
   },
   "devDependencies": {
+    "esbuild": "0.28.2",
     "wrangler": "4.154.0"
+  },
+  "dependencies": {
+    "exceljs": "4.4.0",
+    "jspdf": "4.2.1",
+    "jspdf-autotable": "5.0.9"
   }
 }

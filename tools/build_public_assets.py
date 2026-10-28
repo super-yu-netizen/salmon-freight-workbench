@@ -14,7 +14,7 @@ def build():
         shutil.copy2(ROOT / name, generated / name)
     target = ROOT / 'dist'
     target.mkdir(exist_ok=True)
-    for name in ('index.html', 'app.js', 'style.css', 'public-workspace.js'):
+    for name in ('index.html', 'app.js', 'style.css', 'public-workspace.js', 'browser-exports.js'):
         shutil.copy2(ROOT / 'static' / name, target / name)
     for folder, source in [('sources', ROOT / 'materials/sources'), ('fonts', ROOT / 'assets/fonts')]:
         dest = target / folder

@@ -3,7 +3,7 @@ from pathlib import Path
 import unittest
 
 from inquiry import read_inquiry_xlsx
-from server import ROOT
+ROOT = Path(__file__).resolve().parents[1]
 
 
 class InquiryTests(unittest.TestCase):
