@@ -1,0 +1,4 @@
+﻿id,name,kind,source_id,approved,is_demo,packaging_ids,slots,max_total_kg,max_unit_length_mm,max_unit_width_mm,max_unit_height_mm,max_unit_kg,door_width_mm,door_height_mm,internal_length_mm,internal_width_mm,internal_height_mm,container_type,note
+DEMO-TRUCK-20,起运20托位车辆模板（模拟）,origin,SIM-LOAD,True,True,"[""PALLET-1600"",""PALLET-1300"",""BX-P1600"",""BX-P1300"",""TR-P1600"",""TR-P1300""]",20,22000,1200,1000,1600,600,2340,2585,12032,2352,2698,,模拟已审核模板，只核对适用边界并按20托位计数，不代表通用车型或实际装柜承诺。
+DEMO-FCL-20,40HQ · 20地板托位模板（模拟）,fcl,SIM-LOAD,True,True,"[""PALLET-1600"",""PALLET-1300"",""BX-P1600"",""BX-P1300"",""TR-P1600"",""TR-P1300""]",20,22000,1200,1000,1600,600,2340,2585,12032,2352,2698,40HQ,模拟已审核模板，只核对适用边界并按20托位计数，不代表通用车型或实际装柜承诺。
+DEMO-DELIVERY-20,目的地20托位派送模板（模拟）,destination,SIM-LOAD,True,True,"[""PALLET-1600"",""PALLET-1300"",""BX-P1600"",""BX-P1300"",""TR-P1600"",""TR-P1300""]",20,22000,1200,1000,1600,600,2340,2585,12032,2352,2698,,模拟已审核模板，只核对适用边界并按20托位计数，不代表通用车型或实际装柜承诺。

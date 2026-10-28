@@ -1,0 +1,17 @@
+[project]
+name = "salmon-freight-workbench"
+version = "3.2.0"
+description = "Manufacturing export freight cost estimation demo by Salmon AI"
+requires-python = ">=3.13"
+dependencies = [
+  "reportlab==4.4.9",
+  "xlsxwriter==3.2.9",
+  "openpyxl==3.1.5",
+]
+
+[dependency-groups]
+dev = [
+    "uv>=0.13.4,<0.14",
+    "workers-py",
+    "workers-runtime-sdk",
+]

@@ -1,0 +1,4 @@
+﻿fx_id,name,date,currency,target_currency,rate_to_budget,currency_per_usd,source_id
+BUDGET-20261028,预算汇率 · 2026-10-28（模拟）,2026-10-28,USD,USD,1,,SIM-FX
+BUDGET-20261028,预算汇率 · 2026-10-28（模拟）,2026-10-28,CNY,USD,0.1388888888888888888888888889,7.2,SIM-FX
+BUDGET-20261028,预算汇率 · 2026-10-28（模拟）,2026-10-28,AUD,USD,0.65,,SIM-FX

@@ -1,0 +1,6 @@
+﻿id,name,kind,city,country,address,source_id,postcode
+FACTORY-SZ-A,工厂A · 深圳（模拟）,origin,深圳,中国,深圳市演示工业园工厂A（非交运地址）,SIM-LOC,
+FACTORY-GZ-B,工厂B · 广州（模拟）,origin,广州,中国,广州市演示工业园工厂B（非交运地址）,SIM-LOC,
+AU-BNE-WH,澳洲 · Brisbane客户仓（模拟）,destination,Brisbane,澳大利亚,Brisbane演示商业仓（地址/邮编待真实业务确认）,SIM-LOC,DEMO
+SG-SIN-WH,亚洲 · Singapore客户仓（模拟）,destination,Singapore,新加坡,Singapore演示商业仓（非交运地址）,SIM-LOC,DEMO
+NL-RTM-WH,欧洲 · Rotterdam客户仓（模拟）,destination,Rotterdam,荷兰,Rotterdam演示商业仓（非交运地址）,SIM-LOC,DEMO

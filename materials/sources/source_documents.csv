@@ -1,0 +1,11 @@
+﻿id,name,kind,description,path,url
+SIM-PRODUCT,模拟产品与外箱资料,simulated,标志碟业务背景参考邮件；全部产品资料按本Demo明确设定，非甲方确认主数据。,products.csv,
+SIM-PACK,模拟包装与堆码规范,simulated,标准1600mm和低堆高1300mm，两套完整托盘及已审核排布模拟规范。,packagings.csv,
+SIM-LOAD,模拟装载模板,simulated,20地板托位仅适用于本演示标识的包装外廓，非通用设备承诺。,load_templates.csv,
+SIM-LOC,模拟运输地点与服务范围,simulated,工厂与收货点使用模拟标识，Brisbane/Singapore/Rotterdam为路线背景，不是可直接交运地址。,locations.csv,
+SIM-RATE-A,演示货代A费率源表,simulated,教学模拟费率，不代表当前市场价或可成交价。,rate_fees.csv,
+SIM-RATE-B,演示货代B费率源表,simulated,教学模拟费率，用于同服务范围比较。,rate_fees.csv,
+SIM-FX,公司预算汇率（模拟）,simulated,1USD=7.2CNY，1AUD=.65USD；只用于演示预算折算。,fx.csv,
+METHOD-DHL,DHL计费重量方法说明,methodology,仅为重量/体积计量方法参考，实际规则以所选货代费率约定为准。,,https://www.dhl.com/us-en/home/global-forwarding/freight-forwarding-education-center/calculating-chargeable-weights.html
+SIM-ROUTE-EXT,路线补足模拟费率,simulated,从已有同目的地模拟服务包复制费用和条件，按起运地调整提货与主费。完全为教学设定，没有引用当前市场价。各费率保留base_route和具体调整项。,rate_plans.csv,
+SIM-DEMO-POLICY,演示估价补足规则,simulated,明确演示模式使用的参考费率、预算汇率与大货外推系数。补足结果须标为模拟估价，不是货代有效报价或舱位承诺。,simulation_policy.json,

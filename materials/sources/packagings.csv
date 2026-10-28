@@ -1,0 +1,7 @@
+﻿id,name,product_id,kind,source_id,version,confirmed,is_demo,pallet.length_mm,pallet.width_mm,pallet.height_mm,pallet.tare_kg,pallet.wrapping_kg,layout.across_length,layout.across_width,layout.carton_length_axis,max_height_mm,max_gross_kg,max_layers,allow_overhang,stackable,load_template_ids.origin,load_template_ids.fcl,load_template_ids.destination
+PALLET-1600,标准打托 · 1600mm,MC-001,pallet,SIM-PACK,1.0,True,True,1200,1000,150,20,1,4,1,width,1600,600,4,False,False,DEMO-TRUCK-20,DEMO-FCL-20,DEMO-DELIVERY-20
+PALLET-1300,低堆高打托 · 1300mm,MC-001,pallet,SIM-PACK,1.0,True,True,1200,1000,150,20,1,4,1,width,1300,600,3,False,False,DEMO-TRUCK-20,DEMO-FCL-20,DEMO-DELIVERY-20
+BX-P1600,标准打托 · 1600mm,BX-002,pallet,SIM-PACK,1.0,True,True,1200,1000,150,20,1,2,2,length,1600,600,4,False,False,DEMO-TRUCK-20,DEMO-FCL-20,DEMO-DELIVERY-20
+BX-P1300,低堆高打托 · 1300mm,BX-002,pallet,SIM-PACK,1.0,True,True,1200,1000,150,20,1,2,2,length,1300,600,3,False,False,DEMO-TRUCK-20,DEMO-FCL-20,DEMO-DELIVERY-20
+TR-P1600,标准打托 · 1600mm,TR-003,pallet,SIM-PACK,1.0,True,True,1200,1000,150,20,1,2,2,length,1600,600,4,False,False,DEMO-TRUCK-20,DEMO-FCL-20,DEMO-DELIVERY-20
+TR-P1300,低堆高打托 · 1300mm,TR-003,pallet,SIM-PACK,1.0,True,True,1200,1000,150,20,1,2,2,length,1300,600,3,False,False,DEMO-TRUCK-20,DEMO-FCL-20,DEMO-DELIVERY-20

@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+data/runtime.sqlite3*
+.DS_Store
+node_modules/
+.venv/
+.wrangler/
+dist/
+python_modules/
+.dev.vars*
+.env*
+release/
+版本备份/
+交付/
+.venv-workers/
+worker/

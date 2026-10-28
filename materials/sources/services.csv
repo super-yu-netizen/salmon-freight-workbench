@@ -1,0 +1,3 @@
+﻿id,name,incoterm,incoterms_version,required_coverage,excluded,source_id
+door,到客户指定地点 · DAP预算,DAP,2020,"[""packing"",""origin_pickup"",""export_documents"",""origin_handling"",""main_freight"",""destination_handling"",""destination_documents"",""destination_delivery""]","[""进口清关手续、关税及进口税由买方承担"",""不含卸货、上楼、特殊设备、保险和异常滞留费用""]",SIM-LOC
+terminal,到目的港／机场场站,DAP（指定场站）,2020,"[""packing"",""origin_pickup"",""export_documents"",""origin_handling"",""main_freight"",""destination_handling"",""destination_documents""]","[""不含目的场站之后的派送"",""进口清关手续、关税及进口税由买方承担"",""不含卸货、上楼、特殊设备、保险和异常滞留费用""]",SIM-LOC

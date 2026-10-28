@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#122c3d">
+  <title>外贸运费快速测算工作台</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/public-workspace.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <svg class="svg-defs" aria-hidden="true"><defs>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 7h8M8 12h1m6 0h1m-8 4h1m6 0h1"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m3 7 9-4 9 4-9 4-9-4Zm0 0v10l9 4 9-4V7M12 11v10M7.5 5l9 4"/></symbol>
+    <symbol id="i-rate" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 10h16M10 5v14M15 14h2"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M4 11a8 8 0 1 1 1 5M4 5v6h6M12 7v5l3 2"/></symbol>
+    <symbol id="i-air" viewBox="0 0 24 24"><path d="m3 13 7-3V5c0-2 4-2 4 0v5l7 3v3l-7-1v4l2 1v1l-4-1-4 1v-1l2-1v-4l-7 1z"/></symbol>
+    <symbol id="i-ship" viewBox="0 0 24 24"><path d="M5 13V6h14v7M9 6V3h6v3M2 14l10-4 10 4-4 6H6zM12 10v8M3 22c2-2 4 2 6 0s4 2 6 0 4 2 6 0"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 17v4h16v-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8m-8 4h6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m9 15 6-6M8 17l-1 1a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m0 10a4 4 0 0 0 6 0l5-5a4 4 0 0 0-6-6l-1 1"/></symbol>
+  </defs></svg>
+  <aside class="sidebar">
+    <a class="brand" href="#quick" aria-label="运费工作台首页"><span class="brand-mark"><svg><use href="#i-ship"/></svg></span><span>运费工作台<small>FREIGHT DESK</small></span></a>
+    <div class="workspace-label">制造外贸 · 船务采购</div>
+    <nav aria-label="主导航">
+      <button class="nav-item active" data-view="quick"><svg><use href="#i-calc"/></svg>快速测算<span class="nav-dot"></span></button>
+      <button class="nav-item" data-view="materials"><svg><use href="#i-box"/></svg>常用资料</button>
+      <button class="nav-item" data-view="rates"><svg><use href="#i-rate"/></svg>货代费率</button>
+      <button class="nav-item" data-view="history"><svg><use href="#i-history"/></svg>测算记录</button>
+    </nav>
+    <div class="sidebar-bottom"><div><span class="local-dot"></span><span id="workspaceCaption">本机工作空间</span></div><small id="workspaceStorageHint">模拟资料 · 可替换为企业资料</small><div id="catalogVersion">正在载入资料…</div></div>
+    <div class="creator-signature" aria-label="三文鱼AI，WX：supersalmon"><div class="creator-wordmark">三文鱼<span>AI</span></div><div class="creator-contact">WX：supersalmon</div></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div class="breadcrumb">船务工作空间 <span>/</span> <strong id="breadcrumbCurrent">快速测算</strong></div><div class="topbar-right"><span id="estimationModeTag" class="demo-tag">DEMO · 演示估价</span><button class="text-button" id="openParse"><svg><use href="#i-file"/></svg>询价文字快捷填入</button></div></header>
+    <div id="appError" class="global-error" role="alert" hidden></div>
+
+    <section id="view-quick" class="view active">
+      <div class="page-heading"><div><div class="eyebrow">COST ESTIMATION</div><h1>快速判断，一批货的运输成本</h1><p>选好产品与目的地，比较空海运总费和每套运费。</p></div><button id="resetDemo" class="button ghost small"><span>载入预置案例</span></button></div>
+      <div id="snapshotBanner" class="snapshot-banner" hidden></div>
+      <form id="quickForm" class="input-panel">
+        <div class="steps-grid">
+          <section class="form-step"><div class="step-heading"><span>01</span><h2>产品与数量</h2></div>
+            <label class="field" for="product">产品 / SKU<select id="product" aria-label="产品 / SKU" name="product_id" required></select></label>
+            <div class="two-fields"><label class="field" for="quantities">订货数量（套）<input id="quantities" aria-label="订货数量（套）" name="quantities" inputmode="numeric" placeholder="1000, 3000" value="1000, 3000" required><small>多个数量用逗号分隔</small></label><label class="field" for="packaging">包装方案<select id="packaging" aria-label="包装方案" name="packaging_id" required></select></label></div>
+            <div id="productSummary" class="field-footnote"></div>
+          </section>
+          <section class="form-step"><div class="step-heading"><span>02</span><h2>路线与服务</h2></div>
+            <div class="two-fields"><label class="field" for="origin">工厂提货点<select id="origin" aria-label="工厂提货点" name="origin_id" required></select></label><label class="field" for="destination">运输目的地<select id="destination" aria-label="运输目的地" name="destination_id" required></select></label></div>
+            <div class="two-fields"><label class="field" for="service">服务范围<select id="service" aria-label="服务范围" name="service_id" required></select></label><label class="field" for="departure">计划启运日期<input type="date" id="departure" aria-label="计划启运日期" name="departure_date" required></label></div>
+          </section>
+          <section class="form-step last-step"><div class="step-heading"><span>03</span><h2>运输与货代</h2></div>
+            <label class="field" for="supplier">货代方案<select id="supplier" aria-label="货代方案" name="supplier_ids"></select></label>
+            <div class="mode-picker"><label><input type="checkbox" id="modeAir" value="air" checked><svg><use href="#i-air"/></svg>空运</label><label><input type="checkbox" id="modeFcl" value="fcl" checked><svg><use href="#i-ship"/></svg>海运整柜</label></div>
+            <div class="calc-row"><span id="formState" class="muted">资料就绪后即可测算</span><button id="calculate" type="submit" class="button primary">计算运费<svg><use href="#i-arrow"/></svg></button></div>
+          </section>
+        </div>
+        <div class="estimation-mode-row"><label for="demoEstimation"><input type="checkbox" id="demoEstimation" name="demo_estimation" aria-label="演示估价" aria-describedby="demoEstimationHint" checked><span>演示估价</span></label><span id="demoEstimationHint">缺价、日期或货量超范围时用模拟参数继续估算</span></div>
+        <details class="optional-fields"><summary>询价编号与业务备注 <span>可选</span></summary><div class="optional-grid"><label class="field" for="bu">BU / 业务部门<input id="bu" placeholder="BU1"></label><label class="field" for="reference">询价编号<input id="reference" placeholder="RFQ-DEMO"></label><label class="field" for="notes">业务备注<input id="notes" placeholder="补充本次运输需求"></label></div></details>
+      </form>
+
+      <section id="resultArea" class="result-section" aria-live="polite"><div class="loading-placeholder">正在载入产品、包装和费率资料…</div></section>
+    </section>
+
+    <section id="view-materials" class="view">
+      <div class="page-heading"><div><div class="eyebrow">BUSINESS MATERIALS</div><h1>常用资料</h1><p>快算所用的产品、包装、地点与装载依据，都可以查看和带走。</p></div><div class="button-group"><button class="button ghost" id="exportCatalog"><svg><use href="#i-down"/></svg>导出资料 JSON</button><button class="button secondary" id="importCatalog">导入资料 JSON</button><input type="file" id="catalogFile" accept=".json,application/json" hidden></div></div>
+      <div class="tabbar" id="materialTabs"><button class="active" data-tab="products">产品</button><button data-tab="packagings">包装与装载</button><button data-tab="locations">运输地点</button><button data-tab="sources">资料源文件</button></div>
+      <div id="materialContent" class="surface"></div>
+    </section>
+
+    <section id="view-rates" class="view">
+      <div class="page-heading"><div><div class="eyebrow">FORWARDER RATES</div><h1>货代费率</h1><p>按路线、服务范围和有效期维护价格，更新后保存为新的资料版本。</p></div><span class="pill neutral">费用按原币维护</span></div>
+      <div class="rate-layout"><aside class="rate-list-panel"><label class="field" for="rateModeFilter">筛选运输方式<select id="rateModeFilter"><option value="all">全部方式</option><option value="air">空运</option><option value="fcl">海运整柜</option></select></label><div id="ratePlanList"></div></aside><div id="rateDetail" class="surface"></div></div>
+    </section>
+
+    <section id="view-history" class="view">
+      <div class="page-heading"><div><div class="eyebrow">SAVED ESTIMATES</div><h1>测算记录</h1><p>保存每次测算的条件、费率与结果，随时复核或接着调整。</p></div><button class="button ghost" id="refreshHistory"><svg><use href="#i-history"/></svg>刷新记录</button></div>
+      <div class="surface history-surface"><div class="table-toolbar"><label class="search-field"><input id="historySearch" type="search" placeholder="搜索产品、目的地或测算编号" aria-label="搜索测算记录"></label><span id="historyCount" class="muted"></span></div><div id="historyContent"></div></div>
+    </section>
+
+    <footer class="page-footer"><div class="creator-signature-mobile" aria-label="三文鱼AI，WX：supersalmon"><div class="creator-wordmark">三文鱼<span>AI</span></div><div class="creator-contact">WX：supersalmon</div></div><span>FREIGHT DESK <span class="separator">·</span> 内部运费预算</span><span id="workspaceFooterHint">费率与包装均为预置模拟，实际运输以企业和货代确认条件为准。</span></footer>
+  </main>
+
+  <dialog id="parseDialog"><div class="dialog-heading"><div><h2>询价资料快捷填入</h2><p>从常用字段提取输入草稿，核对后再计算。</p></div><button class="icon-button" data-close="parseDialog" aria-label="关闭"><svg><use href="#i-close"/></svg></button></div><textarea id="inquiryText" rows="8" placeholder="产品：足球标志碟套装&#10;数量：1000,3000&#10;目的地：布里斯班&#10;启运日期：2026-11-01"></textarea><div class="helper-note">使用本地约定字段匹配，不调用外部大模型。原始费率仍取自所选资料。</div><div class="excel-import-row"><button class="button ghost small" id="importInquiryExcel">导入询价 Excel</button><input id="inquiryExcelFile" type="file" accept=".xlsx" hidden><span>使用资料源工作簿中的“询价输入”表，最大3MB。</span></div><div id="parseFeedback" class="dialog-feedback"></div><div class="dialog-actions"><button class="button ghost" data-close="parseDialog">取消</button><button class="button primary" id="parseInquiry">提取文字并带入</button></div></dialog>
+  <dialog id="detailDialog"><div id="detailDialogContent"></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

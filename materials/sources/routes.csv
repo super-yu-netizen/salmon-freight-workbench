@@ -1,0 +1,7 @@
+﻿id,name,origin_id,destination_id,air_origin,air_destination,sea_origin,sea_destination,source_id,base_route,simulation_note
+SZ-BNE,深圳 → Brisbane,FACTORY-SZ-A,AU-BNE-WH,SZX,BNE,盐田港,Brisbane港,SIM-LOC,,
+SZ-SIN,深圳 → Singapore,FACTORY-SZ-A,SG-SIN-WH,SZX,SIN,盐田港,Singapore港,SIM-LOC,,
+GZ-RTM,广州 → Rotterdam,FACTORY-GZ-B,NL-RTM-WH,CAN,AMS（模拟陆转）,南沙港,Rotterdam港,SIM-LOC,,
+GZ-BNE,广州 → Brisbane,FACTORY-GZ-B,AU-BNE-WH,CAN,BNE,南沙港,Brisbane港,SIM-ROUTE-EXT,SZ-BNE,起运点调整的模拟路线，目的地服务沿用对应模拟服务包。
+GZ-SIN,广州 → Singapore,FACTORY-GZ-B,SG-SIN-WH,CAN,SIN,南沙港,Singapore港,SIM-ROUTE-EXT,SZ-SIN,起运点调整的模拟路线，目的地服务沿用对应模拟服务包。
+SZ-RTM,深圳 → Rotterdam,FACTORY-SZ-A,NL-RTM-WH,SZX,AMS（模拟陆转）,盐田港,Rotterdam港,SIM-ROUTE-EXT,GZ-RTM,起运点调整的模拟路线，目的地服务沿用对应模拟服务包。

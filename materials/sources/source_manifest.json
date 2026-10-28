@@ -1,0 +1,157 @@
+{
+  "catalog_hash": "50f83454680767bf9b83ababdda6d4ff99c6161935e72c2a7150546d9140f371",
+  "catalog_version": "CAT-20261028-FBFAA63",
+  "generated_at": "2026-10-28T02:27:48+00:00",
+  "items": [
+    {
+      "id": "catalog",
+      "name": "完整模拟资料源 JSON",
+      "path": "catalog.json",
+      "url": "/sources/catalog.json",
+      "kind": "simulated",
+      "description": "工作台实际使用的数据结构，可在资料页导入生成新版本。",
+      "bytes": 483206,
+      "sha256": "ee8ad32ae90ab805476fd38d1a051e9fa0c74d832f374dcbf664a8fce95edca4"
+    },
+    {
+      "id": "simulation_policy",
+      "name": "模拟估价补足规则 JSON",
+      "path": "simulation_policy.json",
+      "url": "/sources/simulation_policy.json",
+      "kind": "simulated",
+      "description": "固定模拟基准费率、预算汇率与大货估价系数，供演示补值追溯；不代表市场报价。",
+      "bytes": 225017,
+      "sha256": "7d8476c0b08feb1ee1894a1c02749c7bad5b18cc9041fde5ddc24033826a2757"
+    },
+    {
+      "id": "products",
+      "name": "产品资料 CSV",
+      "path": "products.csv",
+      "url": "/sources/products.csv",
+      "kind": "simulated",
+      "description": "与当前完整JSON相同版本；嵌套列表使用JSON文本保留。",
+      "bytes": 656,
+      "sha256": "7f337ffc9817c73f3a9254947d834180ac695fb835e3fec8da64987c3f4bb881"
+    },
+    {
+      "id": "packagings",
+      "name": "包装规范 CSV",
+      "path": "packagings.csv",
+      "url": "/sources/packagings.csv",
+      "kind": "simulated",
+      "description": "与当前完整JSON相同版本；嵌套列表使用JSON文本保留。",
+      "bytes": 1364,
+      "sha256": "7e13627152587e97f80d2b9dfcc04718348196c4eecf7e51a87c4f95da55fba0"
+    },
+    {
+      "id": "locations",
+      "name": "运输地点 CSV",
+      "path": "locations.csv",
+      "url": "/sources/locations.csv",
+      "kind": "simulated",
+      "description": "与当前完整JSON相同版本；嵌套列表使用JSON文本保留。",
+      "bytes": 756,
+      "sha256": "8c3f5ad139304abc6ee519a9ada9fe1504c416de7bc26cc203b58735aa9a2ea2"
+    },
+    {
+      "id": "routes",
+      "name": "运输路线 CSV",
+      "path": "routes.csv",
+      "url": "/sources/routes.csv",
+      "kind": "simulated",
+      "description": "与当前完整JSON相同版本；嵌套列表使用JSON文本保留。",
+      "bytes": 988,
+      "sha256": "c0751c88b61458af63abd86eec77ce8db76cd2a3852493d2c1d8c10b791aecf0"
+    },
+    {
+      "id": "services",
+      "name": "服务范围 CSV",
+      "path": "services.csv",
+      "url": "/sources/services.csv",
+      "kind": "simulated",
+      "description": "与当前完整JSON相同版本；嵌套列表使用JSON文本保留。",
+      "bytes": 824,
+      "sha256": "db2dac6105011138899cb11536005f042edfa8daadb7118533ec6dca9e2c6fde"
+    },
+    {
+      "id": "load_templates",
+      "name": "装载模板 CSV",
+      "path": "load_templates.csv",
+      "url": "/sources/load_templates.csv",
+      "kind": "simulated",
+      "description": "与当前完整JSON相同版本；嵌套列表使用JSON文本保留。",
+      "bytes": 1273,
+      "sha256": "631f702ba4e667c32a3d146d91c19972f5c0f8c0468fd43d5b2ffcd5bb9ac43a"
+    },
+    {
+      "id": "suppliers",
+      "name": "货代资料 CSV",
+      "path": "suppliers.csv",
+      "url": "/sources/suppliers.csv",
+      "kind": "simulated",
+      "description": "与当前完整JSON相同版本；嵌套列表使用JSON文本保留。",
+      "bytes": 115,
+      "sha256": "004e399bc67ee7720a987b62ea38925b994c9a96196fe05f4865255832188899"
+    },
+    {
+      "id": "source_documents",
+      "name": "资料来源 CSV",
+      "path": "source_documents.csv",
+      "url": "/sources/source_documents.csv",
+      "kind": "simulated",
+      "description": "与当前完整JSON相同版本；嵌套列表使用JSON文本保留。",
+      "bytes": 1803,
+      "sha256": "e6970829e2af42d42233bcce4846605d410b307ed37300669f0f432e1c1a9993"
+    },
+    {
+      "id": "rate_plans",
+      "name": "费率方案 CSV",
+      "path": "rate_plans.csv",
+      "url": "/sources/rate_plans.csv",
+      "kind": "simulated",
+      "description": "与当前完整JSON相同版本；嵌套列表使用JSON文本保留。",
+      "bytes": 43994,
+      "sha256": "b1647d5f9e466d84d20b26209983adc129335ee76e2abb0f94d67db14c8a68dd"
+    },
+    {
+      "id": "rate_fees",
+      "name": "费率费用行 CSV",
+      "path": "rate_fees.csv",
+      "url": "/sources/rate_fees.csv",
+      "kind": "simulated",
+      "description": "与当前完整JSON相同版本；嵌套列表使用JSON文本保留。",
+      "bytes": 73215,
+      "sha256": "36d107ce352a420fbc6be633edfceaab7a437f8d6516d0665e0cb684f891c22f"
+    },
+    {
+      "id": "fx",
+      "name": "预算汇率 CSV",
+      "path": "fx.csv",
+      "url": "/sources/fx.csv",
+      "kind": "simulated",
+      "description": "与当前完整JSON相同版本；嵌套列表使用JSON文本保留。",
+      "bytes": 377,
+      "sha256": "4d445c875aa6964b57866198059736cb26f616fcf5990f3fef11e3fcb92a48d8"
+    },
+    {
+      "id": "演示基础资料",
+      "name": "演示基础资料 Excel",
+      "path": "演示基础资料.xlsx",
+      "url": "/sources/%E6%BC%94%E7%A4%BA%E5%9F%BA%E7%A1%80%E8%B5%84%E6%96%99.xlsx",
+      "kind": "simulated",
+      "description": "产品、包装、地点、路线、服务、装载、货代、费率及汇率，按资料类别分表。",
+      "bytes": 50848,
+      "sha256": "2fdca7d253e8e58dc11ad241902c9ead4df8ca0ff367cb91e86aae90628edfd7"
+    },
+    {
+      "id": "资料源说明",
+      "name": "资料源说明",
+      "path": "资料源说明.md",
+      "url": "/sources/%E8%B5%84%E6%96%99%E6%BA%90%E8%AF%B4%E6%98%8E.md",
+      "kind": "documentation",
+      "description": "来源、模拟边界和资料导入方式。",
+      "bytes": 2218,
+      "sha256": "bc06253c789fa7a0f96c84234c50eb33122a66cf2210168999e8de15b6ee6bf4"
+    }
+  ]
+}

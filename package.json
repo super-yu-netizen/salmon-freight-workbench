@@ -1,0 +1,14 @@
+{
+  "name": "salmon-freight-workbench",
+  "version": "3.2.0",
+  "private": true,
+  "description": "三文鱼AI · 制造外贸船务运费快速测算演示工作台",
+  "scripts": {
+    "build": "python3 tools/build_public_assets.py",
+    "dev:cloudflare": "uv run pywrangler dev --port 8877",
+    "deploy": "npm run build && uv run pywrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.154.0"
+  }
+}

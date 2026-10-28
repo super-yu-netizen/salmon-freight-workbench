@@ -1,0 +1,3 @@
+﻿id,name,source_id,kind
+DEMO-A,演示货代 A,SIM-RATE-A,simulated
+DEMO-B,演示货代 B,SIM-RATE-B,simulated

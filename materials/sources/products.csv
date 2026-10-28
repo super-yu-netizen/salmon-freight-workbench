@@ -1,0 +1,4 @@
+﻿id,name,unit,composition,category,source_id,default_packaging_id,carton.units_per_carton,carton.length_mm,carton.width_mm,carton.height_mm,carton.gross_kg,carton.unit_net_kg,carton.tare_kg,carton.partial_rule
+MC-001,足球标志碟套装,套,1个收纳杆 + 25个标志碟,普通体育用品,SIM-PRODUCT,PALLET-1600,1,989,288,301,3.3,2.8,0.5,net_plus_tare
+BX-002,塑料收纳箱组合,套,4个收纳箱为一套（模拟）,普通塑料制品,SIM-PRODUCT,BX-P1600,4,600,400,300,8,1.5,2,net_plus_tare
+TR-003,训练阻力带套装,套,5条阻力带 + 收纳袋（模拟）,普通体育用品,SIM-PRODUCT,TR-P1600,20,500,400,250,12,0.5,2,net_plus_tare
